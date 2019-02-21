@@ -7,3 +7,7 @@
 Der Heilpraktiker erfasst erbrachte Leistungen für seine Patienten und rechnet
 diese ab. Vorlagen für eine Rechnung werden im Dateisystem abgelegt. Rechnungen
 können auf eine lokalen Drucker ausgegeben werden.
+
+## Überblick
+
+![Use-Case-Überblick](Use-Case-Ueberblick.png)
