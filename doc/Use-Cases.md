@@ -92,3 +92,7 @@ Diagnise gesucht werden. Die Liste der gefundenen Rechnungen kann nach jeder
 Spalte sortiert werden. Die Standardsortierung ist nach Rechnungsnummer. Ohne
 Suchkritierium, werden alle Rechnungen eines Patienten in der Liste aufgeführt.
 Alternativ können alle Rechnungen aller Patienten aufgelistet werden.
+
+## Schema
+
+![Schema](Schema.png)
