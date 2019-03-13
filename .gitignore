@@ -1,0 +1,5 @@
+# Xcode
+xcuserdata/
+
+# Temporary files
+doc/*.html
