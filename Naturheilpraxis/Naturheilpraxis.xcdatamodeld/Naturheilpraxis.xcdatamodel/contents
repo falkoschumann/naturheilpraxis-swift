@@ -1,4 +1,28 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Patient" representedClassName="Patient" syncable="YES" codeGenerationType="class">
+        <attribute name="annahmejahr" optional="YES" attributeType="Integer 32" minValueString="1900" maxValueString="2100" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="anrede" optional="YES" attributeType="String" defaultValueString="Frau" syncable="YES"/>
+        <attribute name="beruf" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="email" optional="YES" attributeType="String" regularExpressionString="[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,64}" syncable="YES"/>
+        <attribute name="familienstand" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="geburtstag" optional="YES" attributeType="Date" usesScalarValueType="NO" syncable="YES"/>
+        <attribute name="hausnummer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="kindVon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="land" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="mobilnummer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="nachname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="notizen" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="partnerVon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postleitzahl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="staatsangehoerigkeit" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="strasse" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="telefonnummer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="titel" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="vorname" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="wohnort" optional="YES" attributeType="String" syncable="YES"/>
+    </entity>
+    <elements>
+        <element name="Patient" positionX="-63" positionY="-18" width="128" height="343"/>
+    </elements>
 </model>

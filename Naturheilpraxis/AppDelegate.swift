@@ -11,8 +11,6 @@ import Cocoa
 @NSApplicationMain
 class AppDelegate: NSObject, NSApplicationDelegate {
 
-
-
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         // Insert code here to initialize your application
     }
@@ -30,6 +28,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
          application to it. This property is optional since there are legitimate
          error conditions that could cause the creation of the store to fail.
         */
+        // NSPersistentContainer kann/soll erweitert werden, um Datenspezifische Funktionen
         let container = NSPersistentContainer(name: "Naturheilpraxis")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error {
