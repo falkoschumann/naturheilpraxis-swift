@@ -24,7 +24,7 @@ class ViewController: NSViewController {
         }
         
         //insertNewPatient()
-        fetchPatienten()
+        //fetchPatienten()
         
         // Do any additional setup after loading the view.
     }
