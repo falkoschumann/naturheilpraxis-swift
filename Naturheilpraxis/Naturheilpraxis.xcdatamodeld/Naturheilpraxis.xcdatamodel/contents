@@ -14,6 +14,7 @@
         <attribute name="nachname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="notizen" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="partnerVon" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="patientennummer" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="postleitzahl" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="staatsangehoerigkeit" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="strasse" optional="YES" attributeType="String" syncable="YES"/>
@@ -21,8 +22,24 @@
         <attribute name="titel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="vorname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wohnort" optional="YES" attributeType="String" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="patientennummer"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="Praxis" representedClassName="Praxis" syncable="YES" codeGenerationType="class">
+        <attribute name="praxis" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reihenfolge" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="standard" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="praxis"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Patient" positionX="-63" positionY="-18" width="128" height="343"/>
+        <element name="Patient" positionX="-63" positionY="-18" width="128" height="360"/>
+        <element name="Praxis" positionX="-54" positionY="144" width="128" height="90"/>
     </elements>
 </model>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CC2532552249780D00462530 /* SQLiteImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2532542249780D00462530 /* SQLiteImporter.swift */; };
 		CC5B0F7122399CB500A7E124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0F7022399CB500A7E124 /* AppDelegate.swift */; };
 		CC5B0F7322399CB500A7E124 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0F7222399CB500A7E124 /* ViewController.swift */; };
 		CC5B0F7622399CB500A7E124 /* Naturheilpraxis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0F7422399CB500A7E124 /* Naturheilpraxis.xcdatamodeld */; };
@@ -14,6 +15,7 @@
 		CC5B0F7B22399CB700A7E124 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5B0F7922399CB700A7E124 /* Main.storyboard */; };
 		CC5B0F8722399CB700A7E124 /* NaturheilpraxisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0F8622399CB700A7E124 /* NaturheilpraxisTests.swift */; };
 		CC5B0F9222399CB700A7E124 /* NaturheilpraxisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0F9122399CB700A7E124 /* NaturheilpraxisUITests.swift */; };
+		CCC0EBAD2247ED4C00953CF8 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC0EBAC2247ED4C00953CF8 /* PersistentContainer.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -34,6 +36,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CC2532542249780D00462530 /* SQLiteImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteImporter.swift; sourceTree = "<group>"; };
 		CC5B0F6D22399CB500A7E124 /* Naturheilpraxis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naturheilpraxis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5B0F7022399CB500A7E124 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC5B0F7222399CB500A7E124 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -48,6 +51,7 @@
 		CC5B0F8D22399CB700A7E124 /* NaturheilpraxisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NaturheilpraxisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5B0F9122399CB700A7E124 /* NaturheilpraxisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturheilpraxisUITests.swift; sourceTree = "<group>"; };
 		CC5B0F9322399CB700A7E124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CCC0EBAC2247ED4C00953CF8 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,6 +103,8 @@
 			isa = PBXGroup;
 			children = (
 				CC5B0F7022399CB500A7E124 /* AppDelegate.swift */,
+				CCC0EBAC2247ED4C00953CF8 /* PersistentContainer.swift */,
+				CC2532542249780D00462530 /* SQLiteImporter.swift */,
 				CC5B0F7222399CB500A7E124 /* ViewController.swift */,
 				CC5B0F7722399CB700A7E124 /* Assets.xcassets */,
 				CC5B0F7922399CB700A7E124 /* Main.storyboard */,
@@ -195,6 +201,11 @@
 				TargetAttributes = {
 					CC5B0F6C22399CB500A7E124 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.Sandbox = {
+								enabled = 0;
+							};
+						};
 					};
 					CC5B0F8122399CB700A7E124 = {
 						CreatedOnToolsVersion = 10.1;
@@ -257,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CCC0EBAD2247ED4C00953CF8 /* PersistentContainer.swift in Sources */,
 				CC5B0F7322399CB500A7E124 /* ViewController.swift in Sources */,
+				CC2532552249780D00462530 /* SQLiteImporter.swift in Sources */,
 				CC5B0F7622399CB500A7E124 /* Naturheilpraxis.xcdatamodeld in Sources */,
 				CC5B0F7122399CB500A7E124 /* AppDelegate.swift in Sources */,
 			);
@@ -425,7 +438,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Naturheilpraxis/Naturheilpraxis.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = QC6EN37P56;
@@ -444,7 +456,6 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_ENTITLEMENTS = Naturheilpraxis/Naturheilpraxis.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = QC6EN37P56;

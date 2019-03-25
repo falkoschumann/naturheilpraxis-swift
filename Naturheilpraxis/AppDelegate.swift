@@ -21,7 +21,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
 
     // MARK: - Core Data stack
 
-    lazy var persistentContainer: NSPersistentContainer = {
+    lazy var persistentContainer: PersistentContainer = {
         /*
          The persistent container for the application. This implementation
          creates and returns a container, having loaded the store for the
@@ -29,7 +29,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
          error conditions that could cause the creation of the store to fail.
         */
         // NSPersistentContainer kann/soll erweitert werden, um Datenspezifische Funktionen
-        let container = NSPersistentContainer(name: "Naturheilpraxis")
+        let container = PersistentContainer(name: "Naturheilpraxis")
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error {
                 // Replace this implementation with code to handle the error appropriately.
@@ -46,6 +46,7 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 fatalError("Unresolved error \(error)")
             }
         })
+        SQLiteImporter(container).importFile()
         return container
     }()
 
