@@ -14,7 +14,7 @@ können auf eine lokalen Drucker ausgegeben werden.
 
 ## Patienten verwalten
 
-Als Heilpraktiker lege ich einen neuen Patienten an. Ich erfasse Name,
+__Als Heilpraktiker lege ich einen neuen Patienten an__. Ich erfasse Name,
 Anschrift, Kontaktmöglichkeit, Praxis, Annahmejahr, Geburtsdatum und weitere
 Informationen. Die Praxis ist mit der Standardpraxis vorbelegt. Das Annahmejahr
 ist mit dem aktuellen Jahr vorbelegt. Als Merkmale sind Standardmerkmale
@@ -27,29 +27,47 @@ Als Heilpraktiker bearbeite ich einen vorhanden Patienten. Als erstes muss ich
 den _Patient suchen_. Zum Bearbeiten wird der Patient aus der Liste ausgewählt.
 Alle Informationen die beim Anlegen erfasst werden, können geändert werden.
 
+## Diagnose stellen
+
+__Als Heilpraktiker stelle ich eine Diagnose für einen Patienten.__ Zunächst
+muss der Patient ausgewählt werden, für den eine Diagnose gestellt wird. Dies
+erfolgt mit _Patient suchen_. Aus der Liste wird der gesuchte Patient
+ausgewählt. Es werden alle bisher gestellten Diagnosen aufgelistet. Beim Stellen
+einer Diagnose werden Diagnosedatum und Diagnosetext erfasst.
+
+__Als Heilpraktiker bearbeite ich eine Diagnose für einen Patienten.__  Als
+erstes muss ein Patient mit _Patient suchen_ ausgewählt werden. Eine Diagnose
+kann nur bearbeitet werden, wenn sie noch in keiner Rechnung verwendet wird.
+
+__Als Heilpraktiker lösche ich eine Diagnose für einen Patienten.__ Als erstes
+muss ein Patient mit _Patient suchen_ ausgewählt werden. Eine Diagnose kann nur
+gelöscht werden, wenn sie noch in keiner Rechnung verwendet wird.
+
 ## Leistungen erfassen
 
-Als Heilpraktiker erfasse ich erbrachte Leistungen für einen Patienten. Zunächst
-muss der Patient ausgewählt werden, für den Leistungen erfasst werden. Dies
-erfolgt mit _Patient suchen_. Aus der Liste wird der gesuchte Patient
+__Als Heilpraktiker erfasse ich erbrachte Leistungen für einen Patienten.__
+Zunächst muss der Patient ausgewählt werden, für den Leistungen erfasst werden.
+Dies erfolgt mit _Patient suchen_. Aus der Liste wird der gesuchte Patient
 ausgewählt. Es werden alle bisher erbrachten Leistungen aufgelistet. Beim
 Anlegen einer Leistung werden die Informationen aus dem Gebührenverzeichnis für
 Heilpraktiker in die Leistung kopiert, damit die Leistung nicht geändert wird,
 wenn das Gebührenverzeichnis aktualisiert wird.
 
-Als Heilpraktiker lösche ich eine erbrachte Leistungen für einen Patienten. Als
-erstes muss ein Patient mit _Patient suchen_ ausgewählt werden. Nur eine noch
-nicht abgerechnete Leistung kann gelöscht werden.
+__Als Heilpraktiker bearbeite ich eine erbrachte Leistungen für einen
+Patienten.__ Als erstes muss ein Patient mit _Patient suchen_ ausgewählt werden. Nur eine noch nicht abgerechnete Leistung kann bearbeitet werden.
 
-Als Heilpraktiker bearbeite ich das Gebührenverzeichnis für Heilpraktiker. Es
-werden die Gebühren aufgelistet. Für eine Gebühr kann kann Nummer, Bezeichnung
-und Preis bearbeitet werden. Eine neue Leistung kann angelegt werden. Eine
-bestehende Leistung kann gelöscht werden.
+__Als Heilpraktiker lösche ich eine erbrachte Leistungen für einen Patienten.__
+Als erstes muss ein Patient mit _Patient suchen_ ausgewählt werden. Nur eine
+noch nicht abgerechnete Leistung kann gelöscht werden.
+
+__Als Heilpraktiker bearbeite ich das Gebührenverzeichnis für Heilpraktiker.__
+Es werden die Gebühren aufgelistet. Für eine Gebühr kann Ziffer, Leistung und Gebühr bearbeitet werden. Eine neue Gebühr kann angelegt werden. Eine
+bestehende Gebühr kann gelöscht werden.
 
 ## Rechnung schreiben
 
-Als Heilpraktiker erstelle ich eine Rechnung für erbrachte Leistungen eines
-Patienten. Als erstes muss ein Patient mit _Patient suchen_ ausgewählt werden.
+__Als Heilpraktiker erstelle ich eine Rechnung für erbrachte Leistungen eines
+Patienten.__ Als erstes muss ein Patient mit _Patient suchen_ ausgewählt werden.
 Aus der Liste der noch nicht abgrechneten Leistungen für den Patienten werden
 die Leistungen für die zu erstellende Rechnung ausgewählt. Dabei wird die
 aktuelle Rechnungssumme berechnet und angezeigt. Es wird eine Rechungsnummer
@@ -59,14 +77,14 @@ Rechnungsdatum übernommen. Die Praxis muss ausgewählt werden. Der Rechnungstex
 ist mit Zahlungsziel und Kontoverbindung vorbelegt. Optional kann eine Diagnose
 angegeben werden.
 
-Als Heilpraktiker annuliere ich eine bestehende Rechnung. Als erstes muss ein
-Patient mit _Patient suchen_ ausgewählt werden. Aus der Liste der gestellten
+__Als Heilpraktiker annuliere ich eine bestehende Rechnung.__ Als erstes muss
+ein Patient mit _Patient suchen_ ausgewählt werden. Aus der Liste der gestellten
 Rechnungen wird die zu annulierende Rechnung ausgewählt. Auf Nachfrage kann die
 Rechnung annulliert werden. Dabei werden alle mit der Rechnung verbundenen
 Leistungen wieder als nicht abgerechnet betrachtet und die annulierte Rechnung
 gelöscht.
 
-Als Heilpraktiker drucke ich eine bestehende Rechnung. Als erstes muss ein
+__Als Heilpraktiker drucke ich eine bestehende Rechnung.__ Als erstes muss ein
 Patient mit _Patient suchen_ ausgewählt werden. Aus der Liste der gestellten
 Rechnungen wird die zu druckende Rechnung ausgewählt. Für ausgewählte Rechnung
 muss vor dem Drucken entschieden werden, ob die Leistungsbezeichhnung auf der
@@ -76,7 +94,7 @@ Rechnungssumme und dem Rechnungstext.
 
 ## Patient suchen
 
-Als Heilpraktiker suche ich einen bestimmten Patienten. Um den Patienten zu
+__Als Heilpraktiker suche ich einen bestimmten Patienten.__ Um den Patienten zu
 finden kann nach Patienten-ID, Nachname, Vorname, Geburtstag, Straße, Wohnort,
 Postleitzahl, Telefonnummer und Annahmejahr gesucht werden. Die Liste der
 gefundenen Patienten kann nach jeder Spalte sortiert werden. Die
@@ -85,7 +103,7 @@ Patienten in der Liste aufgeführt.
 
 ## Rechnung suchen
 
-Als Heilpraktiker suche ich eine bestimmte Rechnung. Um die Rechnung zu
+__Als Heilpraktiker suche ich eine bestimmte Rechnung.__ Um die Rechnung zu
 finden kann nach Rechnungs-ID, Praxis, Rechnungsnummer, Rechnungsdatum,
 Patient-ID, Vorname, Nachname, Geburtsdatum, Wohnort, Rechnungstext und
 Diagnise gesucht werden. Die Liste der gefundenen Rechnungen kann nach jeder
