@@ -23,9 +23,10 @@ vorhandenen Patienten mit dem selben Vor- und Nachnamen sowie Geburtstag
 gesucht. Existiert ein solcher Patient wird vor dem sichern nachgefragt, ob der
 neue Patient wirklich angelegt werden soll.
 
-Als Heilpraktiker bearbeite ich einen vorhanden Patienten. Als erstes muss ich
-den _Patient suchen_. Zum Bearbeiten wird der Patient aus der Liste ausgewählt.
-Alle Informationen die beim Anlegen erfasst werden, können geändert werden.
+__Als Heilpraktiker bearbeite ich einen vorhanden Patienten.__ Als erstes muss
+ich den _Patient suchen_. Zum Bearbeiten wird der Patient aus der Liste
+ausgewählt. Alle Informationen die beim Anlegen erfasst werden, können geändert
+werden.
 
 ## Diagnose stellen
 
