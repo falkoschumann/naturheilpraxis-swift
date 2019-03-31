@@ -46,7 +46,6 @@ class AppDelegate: NSObject, NSApplicationDelegate {
                 fatalError("Unresolved error \(error)")
             }
         })
-        SQLiteImporter(container).importFile()
         return container
     }()
 

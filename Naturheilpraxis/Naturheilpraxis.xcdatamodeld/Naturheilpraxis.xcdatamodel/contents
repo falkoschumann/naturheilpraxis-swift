@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14460.32" systemVersion="18D109" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14490.98" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
     <entity name="Patient" representedClassName="Patient" syncable="YES" codeGenerationType="class">
         <attribute name="annahmejahr" optional="YES" attributeType="Integer 32" minValueString="1900" maxValueString="2100" usesScalarValueType="YES" syncable="YES"/>
         <attribute name="anrede" optional="YES" attributeType="String" defaultValueString="Frau" syncable="YES"/>
@@ -22,6 +22,7 @@
         <attribute name="titel" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="vorname" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="wohnort" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="praxis" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Praxis" inverseName="patienten" inverseEntity="Praxis" syncable="YES"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="patientennummer"/>
@@ -29,17 +30,22 @@
         </uniquenessConstraints>
     </entity>
     <entity name="Praxis" representedClassName="Praxis" syncable="YES" codeGenerationType="class">
-        <attribute name="praxis" optional="YES" attributeType="String" syncable="YES"/>
-        <attribute name="reihenfolge" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
-        <attribute name="standard" optional="YES" attributeType="Boolean" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="hausnummer" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="istStandard" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="ort" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="postleitzahl" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="reihenfolge" optional="YES" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES" syncable="YES"/>
+        <attribute name="strasse" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="patienten" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Patient" inverseName="praxis" inverseEntity="Patient" syncable="YES"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
-                <constraint value="praxis"/>
+                <constraint value="name"/>
             </uniquenessConstraint>
         </uniquenessConstraints>
     </entity>
     <elements>
-        <element name="Patient" positionX="-63" positionY="-18" width="128" height="360"/>
-        <element name="Praxis" positionX="-54" positionY="144" width="128" height="90"/>
+        <element name="Patient" positionX="-265.94140625" positionY="-39.984375" width="128" height="373"/>
+        <element name="Praxis" positionX="-54" positionY="144" width="128" height="163"/>
     </elements>
 </model>

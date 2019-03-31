@@ -7,7 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		CC2532552249780D00462530 /* SQLiteImporter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC2532542249780D00462530 /* SQLiteImporter.swift */; };
+		CC33B3CD224FC6E900C2D894 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC33B3CC224FC6E900C2D894 /* main.swift */; };
+		CC33B3D122510FCB00C2D894 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC0EBAC2247ED4C00953CF8 /* PersistentContainer.swift */; };
+		CC33B3D222510FDD00C2D894 /* Naturheilpraxis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0F7422399CB500A7E124 /* Naturheilpraxis.xcdatamodeld */; };
+		CC33B3D42251117800C2D894 /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC33B3D32251117800C2D894 /* Converter.swift */; };
 		CC5B0F7122399CB500A7E124 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0F7022399CB500A7E124 /* AppDelegate.swift */; };
 		CC5B0F7322399CB500A7E124 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0F7222399CB500A7E124 /* ViewController.swift */; };
 		CC5B0F7622399CB500A7E124 /* Naturheilpraxis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0F7422399CB500A7E124 /* Naturheilpraxis.xcdatamodeld */; };
@@ -35,8 +38,22 @@
 		};
 /* End PBXContainerItemProxy section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		CC33B3C8224FC6E900C2D894 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		CC2532542249780D00462530 /* SQLiteImporter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SQLiteImporter.swift; sourceTree = "<group>"; };
+		CC33B3CA224FC6E900C2D894 /* praxisprogramm-convert */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "praxisprogramm-convert"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC33B3CC224FC6E900C2D894 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		CC33B3D32251117800C2D894 /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
 		CC5B0F6D22399CB500A7E124 /* Naturheilpraxis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Naturheilpraxis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5B0F7022399CB500A7E124 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CC5B0F7222399CB500A7E124 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +72,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		CC33B3C7224FC6E900C2D894 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CC5B0F6A22399CB500A7E124 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -79,12 +103,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		CC33B3CB224FC6E900C2D894 /* praxisprogramm-convert */ = {
+			isa = PBXGroup;
+			children = (
+				CC33B3CC224FC6E900C2D894 /* main.swift */,
+				CC33B3D32251117800C2D894 /* Converter.swift */,
+			);
+			path = "praxisprogramm-convert";
+			sourceTree = "<group>";
+		};
 		CC5B0F6422399CB500A7E124 = {
 			isa = PBXGroup;
 			children = (
 				CC5B0F6F22399CB500A7E124 /* Naturheilpraxis */,
 				CC5B0F8522399CB700A7E124 /* NaturheilpraxisTests */,
 				CC5B0F9022399CB700A7E124 /* NaturheilpraxisUITests */,
+				CC33B3CB224FC6E900C2D894 /* praxisprogramm-convert */,
 				CC5B0F6E22399CB500A7E124 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -95,6 +129,7 @@
 				CC5B0F6D22399CB500A7E124 /* Naturheilpraxis.app */,
 				CC5B0F8222399CB700A7E124 /* NaturheilpraxisTests.xctest */,
 				CC5B0F8D22399CB700A7E124 /* NaturheilpraxisUITests.xctest */,
+				CC33B3CA224FC6E900C2D894 /* praxisprogramm-convert */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,7 +139,6 @@
 			children = (
 				CC5B0F7022399CB500A7E124 /* AppDelegate.swift */,
 				CCC0EBAC2247ED4C00953CF8 /* PersistentContainer.swift */,
-				CC2532542249780D00462530 /* SQLiteImporter.swift */,
 				CC5B0F7222399CB500A7E124 /* ViewController.swift */,
 				CC5B0F7722399CB700A7E124 /* Assets.xcassets */,
 				CC5B0F7922399CB700A7E124 /* Main.storyboard */,
@@ -136,6 +170,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		CC33B3C9224FC6E900C2D894 /* praxisprogramm-convert */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = CC33B3D0224FC6E900C2D894 /* Build configuration list for PBXNativeTarget "praxisprogramm-convert" */;
+			buildPhases = (
+				CC33B3C6224FC6E900C2D894 /* Sources */,
+				CC33B3C7224FC6E900C2D894 /* Frameworks */,
+				CC33B3C8224FC6E900C2D894 /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "praxisprogramm-convert";
+			productName = "praxisprogramm-convert";
+			productReference = CC33B3CA224FC6E900C2D894 /* praxisprogramm-convert */;
+			productType = "com.apple.product-type.tool";
+		};
 		CC5B0F6C22399CB500A7E124 /* Naturheilpraxis */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = CC5B0F9622399CB700A7E124 /* Build configuration list for PBXNativeTarget "Naturheilpraxis" */;
@@ -195,10 +246,13 @@
 		CC5B0F6522399CB500A7E124 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1010;
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Falko Schumann";
 				TargetAttributes = {
+					CC33B3C9224FC6E900C2D894 = {
+						CreatedOnToolsVersion = 10.2;
+					};
 					CC5B0F6C22399CB500A7E124 = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
@@ -233,6 +287,7 @@
 				CC5B0F6C22399CB500A7E124 /* Naturheilpraxis */,
 				CC5B0F8122399CB700A7E124 /* NaturheilpraxisTests */,
 				CC5B0F8C22399CB700A7E124 /* NaturheilpraxisUITests */,
+				CC33B3C9224FC6E900C2D894 /* praxisprogramm-convert */,
 			);
 		};
 /* End PBXProject section */
@@ -264,13 +319,23 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		CC33B3C6224FC6E900C2D894 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC33B3D122510FCB00C2D894 /* PersistentContainer.swift in Sources */,
+				CC33B3D222510FDD00C2D894 /* Naturheilpraxis.xcdatamodeld in Sources */,
+				CC33B3D42251117800C2D894 /* Converter.swift in Sources */,
+				CC33B3CD224FC6E900C2D894 /* main.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		CC5B0F6922399CB500A7E124 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				CCC0EBAD2247ED4C00953CF8 /* PersistentContainer.swift in Sources */,
 				CC5B0F7322399CB500A7E124 /* ViewController.swift in Sources */,
-				CC2532552249780D00462530 /* SQLiteImporter.swift in Sources */,
 				CC5B0F7622399CB500A7E124 /* Naturheilpraxis.xcdatamodeld in Sources */,
 				CC5B0F7122399CB500A7E124 /* AppDelegate.swift in Sources */,
 			);
@@ -319,6 +384,26 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		CC33B3CE224FC6E900C2D894 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QC6EN37P56;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		CC33B3CF224FC6E900C2D894 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QC6EN37P56;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
 		CC5B0F9422399CB700A7E124 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -555,6 +640,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		CC33B3D0224FC6E900C2D894 /* Build configuration list for PBXNativeTarget "praxisprogramm-convert" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CC33B3CE224FC6E900C2D894 /* Debug */,
+				CC33B3CF224FC6E900C2D894 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		CC5B0F6822399CB500A7E124 /* Build configuration list for PBXProject "Naturheilpraxis" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
