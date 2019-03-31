@@ -8,6 +8,16 @@ Der Heilpraktiker erfasst erbrachte Leistungen für seine Patienten und rechnet
 diese ab. Vorlagen für eine Rechnung werden im Dateisystem abgelegt. Rechnungen
 können auf eine lokalen Drucker ausgegeben werden.
 
+## Schema
+
+![Schema](Schema.png)
+
+Ein Patient wird in einer Praxis aufgenommen. Für den Patienten wird eine
+Diagnose erstellt. Zu der Diagnose werden passende Leistungen in einer Praxis
+erbracht. Diese Leistungen werden in der Regel aus dem Gebührenverzeichnis für
+Heilpraktiker übernommen. Leistungen werden mit der dazugehörigen Diagnose
+abgerechnet. Jede Rechnung wird für eine Praxis gebucht.
+
 ## Überblick
 
 ![Überblick](Use-Cases.png)
@@ -111,7 +121,3 @@ Diagnise gesucht werden. Die Liste der gefundenen Rechnungen kann nach jeder
 Spalte sortiert werden. Die Standardsortierung ist nach Rechnungsnummer. Ohne
 Suchkritierium, werden alle Rechnungen eines Patienten in der Liste aufgeführt.
 Alternativ können alle Rechnungen aller Patienten aufgelistet werden.
-
-## Schema
-
-![Schema](Schema.png)
