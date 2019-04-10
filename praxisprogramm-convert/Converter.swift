@@ -9,44 +9,33 @@
 import Foundation
 import SQLite3
 
+enum ConvertingError: Error {
+    case database(String)
+}
+
 class Converter {
     
     let database: OpaquePointer
     let container: PersistentContainer
     
-    init() {
-        database = Converter.openDatabase()
-        container = Converter.openContainer()
+    init(database: OpaquePointer, container: PersistentContainer) {
+        self.database = database
+        self.container = container
+    }
+
+    func convert() throws {
+        try convertPraxen()
     }
     
-    private static func openDatabase() -> OpaquePointer {
-        var database: OpaquePointer?
-        var rc: Int32
-    
-        rc = sqlite3_open("/Users/Shared/Datenbank/Naturheilpraxis/Leipzig.sqlite", &database)
-        if rc != SQLITE_OK {
-            let errmsg = String(cString: sqlite3_errmsg(database)!)
-            print("Can not open database: \(errmsg)")
-            sqlite3_close(database);
-            exit(1)
-        } else {
-            return database!
-        }
-    }
-    
-    private static func openContainer() -> PersistentContainer {
-        return PersistentContainer.create()
-    }
-    
-    func convertPraxen() {
+    private func convertPraxen() throws {
         var statement: OpaquePointer?
-        var rc: Int32
-        
-        rc = sqlite3_prepare(database, "SELECT id, agency, ordernumber FROM agencylist ORDER BY ordernumber;", -1, &statement, nil)
-        if rc != SQLITE_OK {
+        guard sqlite3_prepare(database,
+                              "SELECT id, agency, ordernumber FROM agencylist ORDER BY ordernumber;",
+                              -1,
+                              &statement,
+                              nil) == SQLITE_OK else {
             let errmsg = String(cString: sqlite3_errmsg(database)!)
-            print("SQL error: \(errmsg)");
-            return
+            throw ConvertingError.database("SQL error: \(errmsg)")
         }
 
         let context = container.viewContext
@@ -74,11 +63,7 @@ class Converter {
             print("error finalizing prepared statement: \(errmsg)")
         }
         
-        do {
-            try context.save()
-        } catch let error {
-            print("Can not save: \(error)")
-        }
+        try context.save()
     }
     
     func close() {

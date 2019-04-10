@@ -10,10 +10,12 @@ import Cocoa
 
 class PersistentContainer: NSPersistentContainer {
     
-    static func create() -> PersistentContainer {
+    static func create(_ containerPath: String) -> PersistentContainer {
         let container = PersistentContainer(name: "Naturheilpraxis")
-        try! FileManager.default.createDirectory(atPath: "/Users/Shared/Datenbank/Naturheilpraxis-neu", withIntermediateDirectories: true, attributes: nil)
-        let fileURL = URL(fileURLWithPath: "/Users/Shared/Datenbank/Naturheilpraxis-neu/Naturheilpraxis.sqlite")
+        let fileURL = URL(fileURLWithPath: containerPath)
+        try! FileManager.default.createDirectory(at: fileURL.deletingLastPathComponent(),
+                                                 withIntermediateDirectories: true,
+                                                 attributes: nil)
         container.persistentStoreDescriptions = [NSPersistentStoreDescription(url: fileURL)]
         container.loadPersistentStores(completionHandler: { (storeDescription, error) in
             if let error = error {
