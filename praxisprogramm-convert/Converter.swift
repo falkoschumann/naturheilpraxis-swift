@@ -7,19 +7,14 @@
 //
 
 import Foundation
-import SQLite3
-
-enum ConvertingError: Error {
-    case database(String)
-}
 
 class Converter {
     
-    let database: OpaquePointer
+    let connection: Connection
     let container: PersistentContainer
     
-    init(database: OpaquePointer, container: PersistentContainer) {
-        self.database = database
+    init(connection: Connection, container: PersistentContainer) {
+        self.connection = connection
         self.container = container
     }
 
@@ -28,28 +23,21 @@ class Converter {
     }
     
     private func convertPraxen() throws {
-        var statement: OpaquePointer?
-        guard sqlite3_prepare(database,
-                              "SELECT id, agency, ordernumber FROM agencylist ORDER BY ordernumber;",
-                              -1,
-                              &statement,
-                              nil) == SQLITE_OK else {
-            let errmsg = String(cString: sqlite3_errmsg(database)!)
-            throw ConvertingError.database("SQL error: \(errmsg)")
+        let stmt = try connection.prepareStatement(sql: "SELECT id, agency, ordernumber FROM agencylist ORDER BY ordernumber;")
+        defer {
+            do {
+                try stmt.close()
+            } catch {
+                print("Can not close Statement: \(error)")
+            }
         }
-
-        let context = container.viewContext
+        let rs = try stmt.executeQuery()
         var first = true
-        while sqlite3_step(statement) == SQLITE_ROW {
-            // TODO: Wird ID der Praxis gebraucht?
-            // let id = sqlite3_column_int64(statement, 0)
-            let cString = sqlite3_column_text(statement, 1)
-            let agency = String(cString: cString!)
-            let ordernumber = sqlite3_column_int64(statement, 2)
-            
+        let context = container.viewContext
+        while (try rs.next()) {
             let praxis = Praxis(context: context)
-            praxis.name = agency
-            praxis.reihenfolge = ordernumber
+            praxis.name = try rs.getString(columnIndex: 1)
+            praxis.reihenfolge = try rs.getInt64(columnIndex: 2)
             if first {
                 praxis.istStandard = true
                 first = false
@@ -57,17 +45,7 @@ class Converter {
             print("Insert Praxis: name=\(praxis.name!); ist standard=\(praxis.istStandard); reihenfolge=\(praxis.reihenfolge)")
             context.insert(praxis)
         }
-
-        if sqlite3_finalize(statement) != SQLITE_OK {
-            let errmsg = String(cString: sqlite3_errmsg(database)!)
-            print("error finalizing prepared statement: \(errmsg)")
-        }
-        
         try context.save()
-    }
-    
-    func close() {
-        sqlite3_close(database)
     }
 
 }

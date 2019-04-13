@@ -18,6 +18,7 @@
 		CC5B0F7B22399CB700A7E124 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC5B0F7922399CB700A7E124 /* Main.storyboard */; };
 		CC5B0F8722399CB700A7E124 /* NaturheilpraxisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0F8622399CB700A7E124 /* NaturheilpraxisTests.swift */; };
 		CC5B0F9222399CB700A7E124 /* NaturheilpraxisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC5B0F9122399CB700A7E124 /* NaturheilpraxisUITests.swift */; };
+		CC9D9B5522620644002B0111 /* Database.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC9D9B5422620644002B0111 /* Database.swift */; };
 		CCC0EBAD2247ED4C00953CF8 /* PersistentContainer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CCC0EBAC2247ED4C00953CF8 /* PersistentContainer.swift */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +69,7 @@
 		CC5B0F8D22399CB700A7E124 /* NaturheilpraxisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NaturheilpraxisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CC5B0F9122399CB700A7E124 /* NaturheilpraxisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaturheilpraxisUITests.swift; sourceTree = "<group>"; };
 		CC5B0F9322399CB700A7E124 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CC9D9B5422620644002B0111 /* Database.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Database.swift; sourceTree = "<group>"; };
 		CCC0EBAC2247ED4C00953CF8 /* PersistentContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistentContainer.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -107,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				CC33B3CC224FC6E900C2D894 /* main.swift */,
+				CC9D9B5422620644002B0111 /* Database.swift */,
 				CC33B3D32251117800C2D894 /* Converter.swift */,
 			);
 			path = "praxisprogramm-convert";
@@ -326,6 +329,7 @@
 				CC33B3D122510FCB00C2D894 /* PersistentContainer.swift in Sources */,
 				CC33B3D222510FDD00C2D894 /* Naturheilpraxis.xcdatamodeld in Sources */,
 				CC33B3D42251117800C2D894 /* Converter.swift in Sources */,
+				CC9D9B5522620644002B0111 /* Database.swift in Sources */,
 				CC33B3CD224FC6E900C2D894 /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
