@@ -76,6 +76,7 @@ class ResultSet {
     private var statement: OpaquePointer
     
     private var lastColumnIndex: Int32 = 0
+    private var lastColumnDataWasNull: Bool = false
 
     internal init(_ database: OpaquePointer, _ statement: OpaquePointer) {
         self.database = database
@@ -93,36 +94,49 @@ class ResultSet {
         }
     }
     
-    // TODO Fehlerbehandlung für getXXX(); z.B. fehlerhafter Spaltenindex
-    
     func getString(columnIndex: Int) throws -> String {
         lastColumnIndex = Int32(columnIndex)
+        lastColumnDataWasNull = sqlite3_column_type(statement, lastColumnIndex) == SQLITE_NULL
+        try validateColumnAccess()
         let text = sqlite3_column_text(statement, lastColumnIndex)
         return String(cString: text!)
     }
     
     func getInt32(columnIndex: Int) throws -> Int32 {
         lastColumnIndex = Int32(columnIndex)
+        lastColumnDataWasNull = sqlite3_column_type(statement, lastColumnIndex) == SQLITE_NULL
+        try validateColumnAccess()
         return sqlite3_column_int(statement, lastColumnIndex)
     }
     
     func getInt64(columnIndex: Int) throws -> Int64 {
         lastColumnIndex = Int32(columnIndex)
+        lastColumnDataWasNull = sqlite3_column_type(statement, lastColumnIndex) == SQLITE_NULL
+        try validateColumnAccess()
         return sqlite3_column_int64(statement, lastColumnIndex)
     }
     
     func getDouble(columnIndex: Int) throws -> Double {
         lastColumnIndex = Int32(columnIndex)
+        lastColumnDataWasNull = sqlite3_column_type(statement, lastColumnIndex) == SQLITE_NULL
+        try validateColumnAccess()
         return sqlite3_column_double(statement, lastColumnIndex)
     }
     
     func wasNull() -> Bool {
-        return sqlite3_column_type(statement, lastColumnIndex) == SQLITE_NULL
+        return lastColumnDataWasNull
     }
     
     func close() throws {
         guard sqlite3_finalize(statement) == SQLITE_OK else {
             throw getSQLError(database)
+        }
+    }
+    
+    private func validateColumnAccess() throws {
+        let error = getSQLError(database)
+        guard error.code == SQLITE_ROW else {
+            throw error
         }
     }
     
