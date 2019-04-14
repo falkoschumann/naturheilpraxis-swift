@@ -16,14 +16,14 @@ func getConnection(url: String) throws -> Connection {
         throw getSQLError(database)
     }
     
-    return Connection(database)
+    return Connection(database!)
 }
 
 class Connection {
 
-    private var database: OpaquePointer?
+    private let database: OpaquePointer
 
-    init(_ database: OpaquePointer?) {
+    internal init(_ database: OpaquePointer) {
         self.database = database
     }
     
@@ -33,7 +33,7 @@ class Connection {
             throw getSQLError(database)
         }
 
-        return PreparedStatement(database, statement)
+        return PreparedStatement(database, statement!)
     }
     
     func close() throws {
@@ -46,10 +46,11 @@ class Connection {
 
 class PreparedStatement {
 
-    private var database: OpaquePointer?
-    private var statement: OpaquePointer?
+    private var database: OpaquePointer
+    private var statement: OpaquePointer
 
-    internal init(_ database: OpaquePointer?, _ statement: OpaquePointer?) {
+    internal init(_ database: OpaquePointer, _ statement: OpaquePointer) {
+        self.database = database
         self.statement = statement
     }
     
@@ -62,7 +63,7 @@ class PreparedStatement {
     // TODO executeUpdate() throws -> Int {
 
     func close() throws {
-        guard sqlite3_finalize(statement) != SQLITE_OK else {
+        guard sqlite3_finalize(statement) == SQLITE_OK else {
             throw getSQLError(database)
         }
     }
@@ -71,11 +72,13 @@ class PreparedStatement {
 
 class ResultSet {
     
-    private var database: OpaquePointer?
-    private var statement: OpaquePointer?
+    private var database: OpaquePointer
+    private var statement: OpaquePointer
+    
     private var lastColumnIndex: Int32 = 0
 
-    init(_ database: OpaquePointer?, _ statement: OpaquePointer?) {
+    internal init(_ database: OpaquePointer, _ statement: OpaquePointer) {
+        self.database = database
         self.statement = statement
     }
     
@@ -118,7 +121,7 @@ class ResultSet {
     }
     
     func close() throws {
-        guard sqlite3_finalize(statement) != SQLITE_OK else {
+        guard sqlite3_finalize(statement) == SQLITE_OK else {
             throw getSQLError(database)
         }
     }
