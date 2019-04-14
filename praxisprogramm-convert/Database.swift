@@ -94,10 +94,13 @@ class ResultSet {
         }
     }
     
-    func getString(columnIndex: Int) throws -> String {
+    func getString(columnIndex: Int) throws -> String? {
         lastColumnIndex = Int32(columnIndex)
         lastColumnDataWasNull = sqlite3_column_type(statement, lastColumnIndex) == SQLITE_NULL
         try validateColumnAccess()
+        guard !lastColumnDataWasNull else {
+            return nil
+        }
         let text = sqlite3_column_text(statement, lastColumnIndex)
         return String(cString: text!)
     }
